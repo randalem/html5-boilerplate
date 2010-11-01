@@ -1,129 +1,580 @@
-/*  HTML5 ✰ Boilerplate  */
+/*****************************************************/
+/*Reset*/ /* This reset is a hacked part of the HTML5 Boilerplate  */
+/*****************************************************/
 
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,  footer, header, hgroup, 
-menu, nav, section, summary, time, mark, audio, video {
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  vertical-align:baseline;
-  background:transparent;
-}                  
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
-    display:block;
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0; padding: 0;
+    font-size: 100%; font-weight: normal;
+    font-style: normal
 }
-nav ul { list-style:none; }
-blockquote, q { quotes:none; }
-blockquote:before, blockquote:after,
-q:before, q:after { content:''; content:none; }
-a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
-ins { background-color:#ff9; color:#000; text-decoration:none; }
-mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
-del { text-decoration: line-through; }
-abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
-table { border-collapse:collapse; border-spacing:0; }
-hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
-input, select { vertical-align:middle; }
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset, img {
+    border: 0
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-weight: normal;
+    font-style: normal
+}
+ol, ul {
+    list-style: none
+}
+caption, th {
+    text-align: left
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%; font-weight: normal
+}
+q:before, q:after {
+    content: ''
+}
+abbr, acronym {
+    border: 0
+}
+img, object {
+    max-width: 100%
+}
+/* align checkboxes, radios, text inputs with their label
+   by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] {
+    vertical-align: text-bottom
+}
+/*****************************************************/
+/*Hacks*/ /* Misc Hacks */ /* HTML5 Boilerplate  */
+/*****************************************************/
+input[type="checkbox"] {
+    vertical-align: bottom;
+    *vertical-align: baseline;
+}
+.ie6 input {
+    vertical-align: text-bottom
+}
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button {
+    cursor: pointer
+}
 
-
-body { font:13px/1.231 sans-serif; *font-size:small; } 
-select, input, textarea, button { font:99% sans-serif; }
-pre, code, kbd, samp { font-family: monospace, sans-serif; }
-
-body, select, input, textarea {   color: #444; }
-h1,h2,h3,h4,h5,h6 { font-weight: bold; }
-html { overflow-y: scroll; }
-
-a:hover, a:active { outline: none; }
-a, a:active, a:visited { color: #607890; }
-a:hover { color: #036; }
-
-ul, ol { margin-left: 1.8em; }
-ol { list-style-type: decimal; }
-
-nav ul, nav li { margin: 0; } 
-small { font-size: 85%; }
-strong, th { font-weight: bold; }
-td, td img { vertical-align: top; } 
-sub { vertical-align: sub; font-size: smaller; }
-sup { vertical-align: super; font-size: smaller; }
-pre {  padding: 15px;  white-space: pre;  white-space: pre-wrap;  white-space: pre-line;  word-wrap: break-word; }
-textarea { overflow: auto; } 
-.ie6 legend, .ie7 legend { margin-left: -7px; } 
-input[type="radio"] { vertical-align: text-bottom; }
-input[type="checkbox"] { vertical-align: bottom; }
-.ie7 input[type="checkbox"] { vertical-align: baseline; }
-.ie6 input { vertical-align: text-bottom; }
-label, input[type=button], input[type=submit], button { cursor: pointer; }
-button, input, select, textarea { margin: 0; }
-input:valid, textarea:valid   {  }
-input:invalid, textarea:invalid { border-radius: 1px;  -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red;  box-shadow: 0px 0px 5px red; }
-.no-boxshadow input:invalid, 
-.no-boxshadow textarea:invalid { background-color: #f0dddd; }
-
-::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
-::selection { background:#FF5E99; color:#fff; text-shadow: none; } 
-a:link { -webkit-tap-highlight-color: #FF5E99; } 
-
-button {  width: auto; overflow: visible; }
-.ie7 img { -ms-interpolation-mode: bicubic; }
-
-.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
-.hidden { display: none; visibility: hidden; } 
-.visuallyhidden { position: absolute !important; clip: rect(1px 1px 1px 1px);  clip: rect(1px, 1px, 1px, 1px); }
-.invisible { visibility: hidden; }
-.clearfix:before, .clearfix:after {  content: "\0020"; display: block; height: 0; visibility: hidden;	 } 
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
-
-
- /* Primary Styles
-    Author: 
+/*  j.mp/webkit-tap-highlight-color */
+/* always force a scrollbar in non-IE */
+html {
+    overflow-y: scroll
+}
+/* make buttons play nice in IE:    
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {
+    width: auto;
+    overflow: visible
+}
+/* bicubic resizing for non-native sized IMG: 
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img {
+    -ms-interpolation-mode: bicubic
+}
+/* 
+ * Non-semantic helper classes 
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* for image replacement */
+.ir {
+    display: block !important;
+    border: none;
+    text-decoration: none;
+    text-indent: -999em !important;
+    overflow: hidden !important;
+    background-repeat: no-repeat !important;
+}
+/* Hide for both screenreaders and browsers
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden {
+    display: none;
+    visibility: hidden
+}
+/* Hide only visually, but have it available for screenreaders 
+   www.webaim.org/techniques/css/invisiblecontent/ 
+   Solution from: j.mp/visuallyhidden - Thanks Jonathan Neal! */
+.visuallyhidden {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+    visibility: hidden
+}
+/* >> The Magnificent CLEARFIX << */
+.clearfix {
+    display: inline-block
+}
+* html .clearfix {
+    height: 1%
+}
+.clearfix:after {
+    display: block;
+    height: 0;
+    content: ".";
+    clear: both;
+    visibility: hidden;
+}
+/* Hides from IE-mac \*/
+.clearfix {
+    display: block
+}
+/*****************************************************/
+/*Media Queries*/ /* HTML5 Boilerplate  */
+/*****************************************************/
+/* 
+ * print styles
+ * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
+ */
+@media print { 
+    * {
+        color: #444 !important;
+        background: transparent !important;
+        text-shadow: none;
+    }
+    a:after {
+        content: " (" attr(href) ")"
+    }
+    a, a:visited {
+        color: #444 !important;
+        text-decoration: underline
+    }
+    abbr:after {
+        content: " (" attr(title) ")"
+    }
+    .ir a:after {
+        content: ""
+    }
+    /* Don't show links for images */
+    pre, blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    img {
+        page-break-inside: avoid
+    }
+    @page {
+        margin: 0.5cm
+    }
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2, h3 {
+        page-break-after: avoid
+    }
+}
+/*
+ * Media queries for responsive design
+ */
 @media all and (orientation:portrait) { 
-  
+    /* Style adjustments for portrait mode goes here */
 }
-
 @media all and (orientation:landscape) { 
-  
+    /* Style adjustments for landscape mode goes here */
+}
+/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)  
+   Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 480px) { 
+    /* Prevent iOS, WinMobile from adjusting font size */
+    html {
+        font-size: 60% !important;
+        -webkit-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+    }
+    
+    * {
+        float:none !important;
+    }
+}
+/*****************************************************/
+/*Typography*/
+/*****************************************************/
+/* Font Family is Delicious by Jos Buivenga (exljbris) -> www.exljbris.com */
+@font-face {
+    font-weight: normal;
+    font-style: italic;
+    font-family: 'Delicious';
+    src: url('delicious-italic-webfont.eot');
+    src: local('☺'), url('../type/delicious-italic-webfont.woff') format('woff'), url('../type/delicious-italic-webfont.ttf') format('truetype'), url('../type/delicious-italic-webfont.svg#webfontncrCZjyg') format('svg');
+}
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'DeliciousSmallCaps';
+    src: url('delicious-smallcaps-webfont.eot');
+    src: local('☺'), url('../type/delicious-smallcaps-webfont.woff') format('woff'), url('../type/delicious-smallcaps-webfont.ttf') format('truetype'), url('../type/delicious-smallcaps-webfont.svg#webfontB4nUjmu4') format('svg');
+}
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'DeliciousRoman';
+    src: url('delicious-roman-webfont.eot');
+    src: local('☺'), url('../type/delicious-roman-webfont.woff') format('woff'), url('../type/delicious-roman-webfont.ttf') format('truetype'), url('../type/delicious-roman-webfont.svg#webfont6HC6eNRj') format('svg');
+}
+@font-face {
+    font-weight: bold;
+    font-style: normal;
+    font-family: 'Delicious';
+    src: url('delicious-bold-webfont.eot');
+    src: local('☺'), url('../type/delicious-bold-webfont.woff') format('woff'), url('../type/delicious-bold-webfont.ttf') format('truetype'), url('../type/delicious-bold-webfont.svg#webfontgq7TNone') format('svg');
+}
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'DeliciousHeavy';
+    src: url('delicious-heavy-webfont.eot');
+    src: local('☺'), url('../type/delicious-heavy-webfont.woff') format('woff'), url('../type/delicious-heavy-webfont.ttf') format('truetype'), url('../type/delicious-heavy-webfont.svg#webfontGXXoeKc8') format('svg');
+}
+html {
+    line-height: 1.75em;
+    font-size: 16px;
+    font-family: 'DeliciousRoman', sans-serif;
+}
+p {
+    text-align: justify
+}
+h1 {
+    font-size: 1.5em;
+    line-height: 1.1667em;
+    font-family: 'DeliciousHeavy', sans-serif;
+}
+h2 {
+    font-size: 1.125em;
+    line-height: 1.5556em;
+    font-family: 'DeliciousRoman', sans-serif;
+}
+h3 {
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: .6em;
+}
+h4 {
+    font-size: 0.875em; font-weight: bold;
+    text-align: left;
+    line-height: 2em;
+    font-family: 'Delicious';
+}
+h3:before {
+    content: "∑ "
+}
+h3:after {
+    content: " ∑"
 }
 
-@media screen and (max-device-width: 480px) {
-  
-  
-  /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+em {
+    font-style: oblique
+}
+strong {
+    font-style: italic;
+    font-family: 'Delicious'
+}
+th {
+    font-weight: normal;
+    font-style: italic;
+    font-family: 'Delicious'    
+}
+aside h3{
+    font-size: 0.875em; font-weight: bold;
+    text-align: center;
+    line-height: 2em;
+    font-family: 'Delicious';
+    text-transform: uppercase;
+    
+}
+aside ul {
+    
+}
+aside p, aside th, aside h3, aside td, aside li  {
+    font-size: 0.875em;
+    text-align: left;
+    line-height: 2em
+}
+/*****************************************************/
+/*Layout*/
+/*****************************************************/
+html {
+    background-color: #20262B;
+}
+body {
+    z-index: 1;
+}
+#redwrap {
+    max-width: 65.5em;
+    margin: 0 auto;
+    background-color: #690000;
+    background: url('../images/both_left.png') top left repeat-y, url('../images/both_right.png') top right repeat-y;
+    z-index: 3 !important;
+    position: relative;
+}
+#mainWrapper {
+    width: 90%; max-width: 65em;
+    margin: 0 auto;
+    -moz-border-image: url('../images/background.png') 0;  
+    background: #FFFFFF url('../images/background.png') center repeat-y; color: #20262B;
+    background-size: 100%;
+    padding-top: 1.75em;
+    /* If we ever want to ditch the multiple backgrounds method: ;
+    -moz-box-shadow: 0px -98px 98px  #000000;
+    -webkit-box-shadow: 0px -98px 98px  #000000;
+    box-shadow: 0px -98px 98px  #000000;*/
+}
+header {
+    width: 90%;
+    padding-right: 5%; padding-left: 5%;
+    margin-bottom: 1.75em;
+    background: #EBE3CB;
+    border-bottom: dashed #E3DBC7 1px;
+    border-top: dashed #E3DBC7 1px;
+    display:block;
+    background-color: rgba(235,227,203,.25); /* #EBE3CB color */;
+}
+article {
+    float: left;
+    width: 61.66%;
+    padding-top: 1.75em; padding-right: 2.5%; padding-left: 5%;
+}
+aside {
+    float: right;
+    width: 22.99%;
+    padding-top: 1.75em; padding-right: 5%; padding-left: 2.5%;
+}
+    aside h3 {
+        margin-top: 2em; margin-bottom: 2em;
+    }
+    aside p, aside th, aside h3, aside td, aside li {
+        margin-bottom: 2em;
+    }
+.localnav a{
+    display: inline;
+    text-align: left;
+    padding-left: 1em;
+    margin-left: -1em;
+
+}
+.localnav a:hover {
+    background: transparent url('../images/dot.png') left center no-repeat;
+    -webkit-transition: color 0.3s ease-out;
+}
+.localnav a:focus  {
+    
 }
 
-@media print {
-  * { background: transparent !important; color: #444 !important; text-shadow: none !important; }
-  a, a:visited { color: #444 !important; text-decoration: underline; }
-  a:after { content: " (" attr(href) ")"; } 
-  abbr:after { content: " (" attr(title) ")"; }
-  .ir a:after { content: ""; }  
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; }  
-  tr, img { page-break-inside: avoid; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3{ page-break-after: avoid; }
+.localnav {
+    margin-bottom: 0em;
+}
+.links {
+    margin-bottom: 1.74em;
 }
 
+.localnav{
+}
+.post ul
+{    padding-bottom: 1.75em;}
+.post {
+    border-bottom: dotted 1px lightgrey;
+
+}
+.hidden {
+    display: none;
+    visibility: hidden
+}
+
+#imgcont {
+    display: block
+}
+ol {
+    margin-bottom: 1.75em
+}
+.tablewrap {
+    padding-bottom: 1.75em;
+    margin: 0 auto
+}
+tr {
+    
+}
+td {
+    padding-right: 1em
+}
+th {
+    padding-right: 1em;
+}
+p {
+    margin-bottom: 1.75em;
+}
+a {
+    color: #80A894;
+    text-decoration: none;
+}
+a:hover {
+    background-color: #EBE3CB; color: #20262B
+}
+a:link {
+    -webkit-tap-highlight-color: #FF5E99
+}
+h1 {
+    margin-bottom: 1.1667em;
+    /* text-shadow: 0px 0px 1px rgba(0,0,0,0);*/
+}
+h2 {
+    margin-bottom: 1.5556em;
+    /* text-shadow: 0px 0px 1px rgba(0,0,0,0);*/
+}
+h3 {
+    margin-bottom: 1.75em;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 1.75em;
+    /* text-shadow: 0px 0px 1px rgba(0,0,0,0);*/
+}
+h4 {
+    margin-bottom: 2em;
+}
+.floatright {
+    float: right
+}
+.floatleft {
+    float: left
+}
+.floatcenter {
+    float: center
+}
+
+header ul{
+    
+}
+nav {
+    width: 68.66%;
+    float: left;
+}
+
+
+.navlink {
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 auto;
+    font-size: 1.25em;
+    color: #000000;
+    text-align: center;
+    display: block;
+    padding-right: 1.2em;
+    padding-left: 1.5em;
+    letter-spacing: .32em;
+    background: url('../images/ornament.png') center left no-repeat, url('../images/ornament.png') center right no-repeat;
+}
+
+nav li a:hover{
+color: black;
+-webkit-transition: background-color .2s ease-out;
+-moz-transition: background-color 0.2s ease-out;
+transition: background-color 0.2s ease-out;
+}
+
+
+.center {
+    margin: 0 auto
+}
+footer {
+    border-top: 1px lightgrey dashed;
+    display: block;
+    background: #f5f5f5;
+    min-height: 15.75em;
+    margin: 0 auto;
+    max-width: 71.5em;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+footer ul, footer ul li {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    font-weight: normal;
+    font-style: italic;
+    font-family: 'Delicious';
+    text-align: left;
+    font-size: 1em;
+    text-align: left;
+}
+.col h4 {
+padding-bottom: 0em;
+margin-bottom: 0em;
+}
+.col {
+    height: 10.75em;
+    margin-right: 2.5%;
+    margin-left: -2.5%; 
+    width: 23.00%;
+    padding-left: 2.5%;
+    padding-top: 0.875em;
+    padding-bottom: 0.875em;
+    margin-top: 1.75em;
+    border-right: 1px lightgrey solid;
+    min-width: 150px;
+}
+div canvas {
+    opacity: 1; position:fixed; top: 0px; z-index: 2; cursor: crosshair;
+    }
+#logo {
+    position: absolute;
+    left: 70%;
+    top: 0.66em;
+    width: 20%;
+    max-height: 76px;
+    max-width: 175px;
+    height: 100%;
+    background: transparent url('../images/logo.png') center no-repeat;
+    -moz-background-size:100% auto;
+    background-size: 100%;
+}
+#login {
+ 
+}
+#login {
+
+}
+.facebook {
+    background: url('../images/facebook.png');
+    width: 32px;
+    height: 32px;
+    margin-right: .5em;
+}
+.twitter {
+    background: url('../images/twitter.png');
+    width: 32px;
+    height: 32px;
+    padding-right: 1%;
+}
+.first {
+    padding-left: none;
+}
+nav .first
+{
+    margin-left: -6%;
+}
+.last
+{
+border-right: none;
+margin-right: 0;
+background: none;
+padding-right: 0px;
+}
+
+/* These selection declarations have to be separate.
+   No text-shadow: twitter.com/miketaylr/status/12228805301 
+   Also: hot pink. */
+::-moz-selection {
+    color: #fff;
+    background: #093844;
+    text-shadow: none;
+}
+::selection {
+    color: #fff;
+    background: #093844;
+    text-shadow: none;
+}
+/* End */
